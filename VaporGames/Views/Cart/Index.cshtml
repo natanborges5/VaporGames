@@ -1,0 +1,34 @@
+﻿@model CartViewModel
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">MetaCritic</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+       @foreach(var item in Model.Cart.CartItens){
+            <tr>
+                <td>@item.Game.Name</td>
+                <td>@item.Game.Description</td>
+                <td>@item.Game.MetaCritic</td>
+                <td>$@item.Game.Price</td>
+                <td>
+                    <a asp-controller="Cart" asp-action="RemoveGameFromCart" asp-route-gameId="@item.Game.Id">Remove</a>
+                </td>
+                  
+            </tr>
+       }
+  </tbody>
+      <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">
+                @Model.TotalValue.ToString("c")
+            </td>
+        </tr>
+      </tfoot>
+</table>
+<a type="button" asp-controller="Order" asp-action="CheckOut">Buy</a>

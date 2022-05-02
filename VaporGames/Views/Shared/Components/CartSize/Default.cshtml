@@ -1,0 +1,7 @@
+﻿@model CartViewModel
+
+<a class="bi-cart-fill me-1 text-white" asp-area="" asp-controller="Cart" asp-action="Index">Carrinho</a>    
+@if(Model.Cart.CartItens.Count > 0)
+{                      
+        <span class="badge bg-white text-dark ms-1 rounded-pill">@Model.Cart.CartItens.Count</span>
+}

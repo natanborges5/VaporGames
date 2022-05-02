@@ -1,0 +1,18 @@
+﻿@model Game 
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="@Model.ImageUrl" alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title">@Model.Name</h4>
+    <p class="card-text">@Model.Description</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Genre: @Model.Genre.Name</li>
+    <li class="list-group-item">MetaCritic: @Model.MetaCritic</li>
+    <li class="list-group-item">Release Date: @Model.ReleaseDate</li>
+    <li class="list-group-item">Price: @Model.Price</li>
+  </ul>
+  <div class="card-body">
+    <a asp-controller="Cart" asp-action="AddGameToCart" asp-route-gameId="@Model.Id" class="card-link">Add to Cart</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>

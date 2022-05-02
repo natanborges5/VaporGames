@@ -1,0 +1,11 @@
+﻿@model Game
+<li class="list-group-item d-flex justify-content-between align-items-center">
+<div class="d-flex align-items-center">
+    <img src="@Model.ImageThumb" alt="" style="width: 45px; height: 45px"/>
+    <div class="ms-3">
+        <a asp-controller="Game" asp-action="Details" asp-route-gameId="@Model.Id" class="fw-bold mb-1">@Model.Name</a>
+        <p class="text-muted mb-0">@Model.Genre.Name</p>
+    </div>
+</div>
+<a asp-controller="Cart" asp-action="AddGameToCart" asp-route-gameId="@Model.Id" type="button" class="btn btn-primary btn-sm">Add to Cart</a>
+</li>

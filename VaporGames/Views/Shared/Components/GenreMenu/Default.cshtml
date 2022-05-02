@@ -1,0 +1,15 @@
+﻿<div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Category
+  </a>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    @foreach (var genres in Model)
+    {
+        <li>
+            <a class="dropdown-item" asp-controller="Game" asp-action="List" asp-route-genre="@genres.Name">@genres.Name</a> 
+        </li>
+        
+    }
+  </ul>
+</div>  
